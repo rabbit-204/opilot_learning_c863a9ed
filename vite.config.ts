@@ -1,6 +1,7 @@
 import { vitePlugin as remix } from '@remix-run/dev';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import path from 'path';
 
 declare module '@remix-run/node' {
   interface Future {
@@ -23,5 +24,12 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
+  },
+  resolve: {
+    alias: {
+      // Sử dụng process.cwd() để đảm bảo đường dẫn tuyệt đối chính xác
+      "@aic-kits/react": path.resolve(process.cwd(), "app/mocks/aic-kits.tsx"),
+      "@phosphor-icons/react": path.resolve(process.cwd(), "app/mocks/phosphor-icons.tsx"),
+    },
   },
 });

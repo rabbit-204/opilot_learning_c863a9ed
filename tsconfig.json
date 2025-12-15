@@ -23,7 +23,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./app/*"],
+     "@aic-kits/react": ["./app/mocks/aic-kits.tsx"],      // <--- Thêm dòng này
+      "@phosphor-icons/react": ["./app/mocks/phosphor-icons.tsx"] // <--- Thêm dòng này
     },
 
     // Vite takes care of building everything, not tsc.
