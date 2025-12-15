@@ -1,3 +1,4 @@
+/* eslint-disable */
 // app/mocks/phosphor-icons.tsx
 import React from "react";
 

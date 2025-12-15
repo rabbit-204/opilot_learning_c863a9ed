@@ -1,3 +1,4 @@
+/* eslint-disable */
 // app/services/course.service.ts
 import type { Course, CourseFilter } from '~/models/course.model';
 

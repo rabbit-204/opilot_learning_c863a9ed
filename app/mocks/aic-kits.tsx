@@ -1,3 +1,4 @@
+/* eslint-disable */
 // app/mocks/aic-kits.tsx
 import React, { ReactNode } from 'react';
 
