@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   Accordion,
   Art,
@@ -269,13 +270,13 @@ export default function ComponentDemo() {
   ];
 
   const logoItems: LogoItem[] = [
-    { id: 'logo1', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo1' },
-    { id: 'logo2', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo2' },
-    { id: 'logo3', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo3' },
-    { id: 'logo4', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo4' },
-    { id: 'logo5', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo5' },
-    { id: 'logo6', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo6' },
-    { id: 'logo7', src: 'https://via.placeholder.com/100x50/EEEEEE/9E9E9E?text=Logo7' },
+    { id: 'logo1', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo1' },
+    { id: 'logo2', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo2' },
+    { id: 'logo3', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo3' },
+    { id: 'logo4', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo4' },
+    { id: 'logo5', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo5' },
+    { id: 'logo6', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo6' },
+    { id: 'logo7', src: 'https://placehold.co/100x50/EEEEEE/9E9E9E?text=Logo7' },
   ];
 
   return (
@@ -677,7 +678,7 @@ export default function ComponentDemo() {
             <Box display="flex" flexDirection="column" alignItems="center">
               <Art
                 type="image"
-                art="https://via.placeholder.com/40"
+                art="https://placehold.co/40"
                 width="md"
                 height="md"
               />
@@ -1060,7 +1061,7 @@ export default function ComponentDemo() {
           <Box>
             <List
               data={listItems}
-              renderItem={(item, index) => (
+              renderItem={(item: typeof listItems[0], index: number) => (
                 <Box
                   p="md"
                   bgColor={index % 2 === 0 ? 'grey100' : 'white'}
@@ -1073,7 +1074,7 @@ export default function ComponentDemo() {
                   <Text fontSize="small" color="grey600">{item.description}</Text>
                 </Box>
               )}
-              keyExtractor={(item) => item.id}
+              keyExtractor={(item: typeof listItems[0]) => item.id}
               ListHeaderComponent={
                 <Box p="sm" mb="sm" bgColor="grey200" r="sm">
                   <Text fontWeight="semibold">List Header</Text>
@@ -1114,7 +1115,7 @@ export default function ComponentDemo() {
                 label="Default Input"
                 placeholder="Type something..."
                 value={inputValue}
-                onChange={(value) => setInputValue(value)}
+                onChange={(value: string) => setInputValue(value)}
               />
             </Box>
 
@@ -1131,7 +1132,7 @@ export default function ComponentDemo() {
                 label="Input with Error"
                 placeholder="Enter email..."
                 value={inputError}
-                onChange={(value) => setInputError(value)}
+                onChange={(value: string) => setInputError(value)}
                 error={inputError.includes('@') ? '' : 'Please enter a valid email'}
               />
             </Box>
@@ -1588,7 +1589,7 @@ export default function ComponentDemo() {
             <Text fontSize="large" fontWeight="medium">Initially Expanded</Text>
             <Accordion
               initialExpanded
-              renderHeader={(isExpanded) => (
+              renderHeader={(isExpanded: boolean) => (
                 <Text fontWeight="semibold">
                 Initially Expanded Header (State: {isExpanded ? 'Open' : 'Closed'})
                 </Text>
@@ -1619,7 +1620,7 @@ export default function ComponentDemo() {
           <Box mb="md" display="flex" flexDirection="column" gap="sm">
             <Text fontSize="large" fontWeight="medium">Complex Header/Content</Text>
             <Accordion
-              renderHeader={(isExpanded) => (
+              renderHeader={(isExpanded: boolean) => (
                 <Box display="flex" justifyContent="space-between" alignItems="center" fw>
                   <Text fontWeight="bold" color="primary">Custom Header</Text>
                   <Box bgColor={isExpanded ? 'success' : 'grey300'} r="full" px="sm">

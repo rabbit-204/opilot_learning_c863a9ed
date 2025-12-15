@@ -24,6 +24,10 @@ export const links: LinksFunction = () => [
     href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..800&display=swap',
   },
 ];
+// --- THÊM ĐOẠN NÀY ĐỂ DEBUG ---
+console.log("DEBUG: ThemeProvider =", ThemeProvider);
+console.log("DEBUG: getTheme =", getTheme);
+// ------------------------------
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,7 +39,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider theme={getTheme()}>
+        <ThemeProvider>
           <AppHeader />
           {children}
         </ThemeProvider> 
